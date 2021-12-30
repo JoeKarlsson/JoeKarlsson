@@ -11,6 +11,7 @@
 - :mailbox: &nbsp;Ask me about anything, I am happy to **help** :)
 - :computer: &nbsp;Connect with me on **[LinkedIn]**
 - :bird: &nbsp;Let's talk more in **[Twitter]**
+- 🕺 &nbsp;Binge my videos on **[Tiktok]**
 
 Joe Karlsson (he/they) is a software engineer turned Developer Advocate. He comes from the frozen tundra of Minneapolis, Minnesota (and yes, it does get really cold here, and no, not everyone here has the accent from the movie, Fargo). Joe has been primarily a Node and JavaScript engineer. He has been writing, teaching, and talking about code his entire career. Sharing what he knows and continuing to learn about programming is truly the thing he loves doing the most.
 
