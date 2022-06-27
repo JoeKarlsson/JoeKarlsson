@@ -1,11 +1,11 @@
 <h1 align="left" id="suhailkakar-title">:wave: Hello there fellow nerds! You can call me Joe Karlsson.</h1>
-<h3 align="left">I am a Developer Advocate and Software Developer at SingleStore</h3>
+<h3 align="left">I am a Developer Advocate and Software Developer at Viam Robotics</h3>
 
 <a href="#suhailkakar-title">
   <img src="https://github-readme-stats.vercel.app/api?username=joekarlsson&show_icons=true&theme=react&count_private=true&include_all_commits=true" alt="Joe Karlsson" align="right" />
 </a>
 
-- :office: &nbsp;I'm currently working at **SingleStore**
+- :office: &nbsp;I'm currently working at **Viam Robotics**
 - :writing_hand: &nbsp;I regulary write article on my **[blog]**
 - :speech_balloon: &nbsp;I like to talk about **Data Intensive Apps** and **Databases**
 - :mailbox: &nbsp;Ask me about anything, I am happy to **help** :)
