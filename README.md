@@ -24,4 +24,5 @@ Joe Karlsson (he/they) is a software engineer turned Developer Advocate. He come
 [twitter]: https://twitter.com/JoeKarlsson1 "Twitter"
 [tiktok]: https://www.tiktok.com/@joekarlsson "TikTok"
 [blog]: https://www.joekarlsson.com/ "Blog"
-[SingleStore]: https://www.singlestore.com/ "SingleStore"
+[Viam]: https://www.viam.com/ "Viam"
+ 
