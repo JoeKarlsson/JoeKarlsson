@@ -17,7 +17,7 @@ Joe Karlsson (he/they) is a software engineer turned Developer Advocate. He come
 
 😄 Pronouns: He/Him/They/Them
 
-[![Joe Karlsson's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=joekarlsson&theme=react-dark)](https://github.com/joekarlsson)
+[![Joe Karlsson's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=joekarlsson&theme=react-dark&hide_border=true)](https://github.com/joekarlsson)
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
 [twitter]: https://twitter.com/JoeKarlsson1 "Twitter"
