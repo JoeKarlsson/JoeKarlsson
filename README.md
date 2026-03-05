@@ -15,13 +15,6 @@
 ## 🏆 GitHub Trophies
 [![trophy](https://gh-trophy.cdnsoft.net/?username=joekarlsson&theme=darkhub&row=1)](https://github.com/joekarlsson)
 
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=joekarlsson&layout=compact&theme=react&hide_border=true" alt="Top Languages" />
-  <br/>
-  <img src="https://streak-stats.demolab.com/?user=joekarlsson&theme=react&hide_border=true" alt="GitHub Streak" />
-</div>
 
 ## 📫 How to Reach Me
 
