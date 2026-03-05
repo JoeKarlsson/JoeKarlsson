@@ -2,7 +2,7 @@
 <h3 align="left">I am a Developer Advocate at CloudQuery</h3>
 
 <a href="#joekarlsson-title">
-  <img src="https://github-readme-stats.vercel.app/api?username=joekarlsson&show_icons=true&theme=react&count_private=true&include_all_commits=true" alt="Joe Karlsson" align="right" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=joekarlsson&show_icons=true&theme=react&count_private=true&include_all_commits=true" alt="Joe Karlsson" align="right" />
 </a>
 
 - :office: &nbsp;Currently working at **[CloudQuery]**
@@ -13,12 +13,14 @@
 <br clear="right"/>
 
 ## 🏆 GitHub Trophies
-[![trophy](https://github-profile-trophy.vercel.app/?username=joekarlsson&theme=darkhub&row=1)](https://github.com/joekarlsson)
+[![trophy](https://gh-trophy.cdnsoft.net/?username=joekarlsson&theme=darkhub&row=1)](https://github.com/joekarlsson)
 
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=joekarlsson&layout=compact&theme=react&hide_border=true" alt="Top Languages" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=joekarlsson&layout=compact&theme=react&hide_border=true" alt="Top Languages" />
+  <br/>
+  <img src="https://streak-stats.demolab.com/?user=joekarlsson&theme=react&hide_border=true" alt="GitHub Streak" />
 </div>
 
 ## 📫 How to Reach Me
