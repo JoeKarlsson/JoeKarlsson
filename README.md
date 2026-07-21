@@ -1,11 +1,11 @@
 <h1 align="left" id="joekarlsson-title">:wave: Hello there fellow nerds! You can call me Joe Karlsson.</h1>
-<h3 align="left">I am a Developer Advocate at CloudQuery</h3>
+<h3 align="left">I am a Developer Marketing Engineer at CData</h3>
 
 <a href="#joekarlsson-title">
   <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=joekarlsson&show_icons=true&theme=react&count_private=true&include_all_commits=true" alt="Joe Karlsson" align="right" />
 </a>
 
-- :office: &nbsp;Currently working at **[CloudQuery]**
+- :office: &nbsp;Currently working at **CData**
 - :writing_hand: &nbsp;I regularly write articles on my **[blog]**
 - :speech_balloon: &nbsp;I like to talk about **data and databases**
 - :mailbox: &nbsp;Ask me about anything, I am happy to **help** :)
@@ -35,7 +35,6 @@ Joe Karlsson (he/they) is a software engineer turned Developer Advocate at Cloud
 
 [![Joe Karlsson's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=joekarlsson&theme=react-dark&hide_border=true)](https://github.com/joekarlsson)
 
-[cloudquery]: https://www.cloudquery.io/ "CloudQuery"
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
 [youtube]: https://www.youtube.com/c/JoeKarlsson "YouTube"
 [bluesky]: https://bsky.app/profile/joekarlsson.com "Bluesky"
