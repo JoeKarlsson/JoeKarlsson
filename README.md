@@ -2,7 +2,7 @@
 <h3 align="left">I am a Developer Marketing Engineer at CData</h3>
 
 <a href="#joekarlsson-title">
-  <img src="https://github-readme-stats.vercel.app/api?username=joekarlsson&show_icons=true&theme=react&count_private=true&include_all_commits=true" alt="Joe Karlsson" align="right" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=joekarlsson&theme=react&hide_border=true" alt="Joe Karlsson" align="right" />
 </a>
 
 - :office: &nbsp;Currently working at **CData** — helping AI agents talk to enterprise data
@@ -13,10 +13,6 @@
 - :mailbox: &nbsp;Ask me about anything, I am happy to **help** :)
 
 <br clear="right"/>
-
-## 🏆 GitHub Trophies
-[![trophy](https://gh-trophy.cdnsoft.net/?username=joekarlsson&theme=darkhub&row=1)](https://github.com/joekarlsson)
-
 
 ## 📫 How to Reach Me
 
@@ -32,10 +28,6 @@
 Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he leads developer growth for the managed MCP platform connecting AI agents to live enterprise data. He's spent 15+ years wrangling databases and developer communities at MongoDB, SingleStore, Tinybird, and CloudQuery. Along the way he's given 100+ conference talks worldwide, delivered a TEDx talk, and somehow found time to make art out of seeds and grains (exhibited at the Minnesota State Fair — yes, really). He comes from the frozen tundra of Minneapolis, MN (it does get cold; no, not everyone sounds like Fargo).
 
 😄 **Pronouns:** He/Him/They/Them
-
-## 📈 Activity Graph
-
-[![Joe Karlsson's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=joekarlsson&theme=react-dark&hide_border=true)](https://github.com/joekarlsson)
 
 ## 🐍 Contributions
 
