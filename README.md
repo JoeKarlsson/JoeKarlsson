@@ -48,6 +48,11 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [The Cognitive Case for Play in Technical Work](https://www.joekarlsson.com/blog/cognitive-case-for-play-in-technical-work/)
+- [What I Learned When I Could Finally Prove My Work Mattered](https://www.joekarlsson.com/blog/proving-my-work-mattered/)
+- [The 2026-07-28 MCP Release Explained: What It Means for Enterprise Teams](https://www.joekarlsson.com/blog/mcp-2026-07-28-release-explained/)
+- [I Finally Stopped Managing My Homelab by Hand &lpar;Everything Just Kept Breaking&rpar;](https://www.joekarlsson.com/blog/opentofu-proxmox-immutable-homelab/)
+- [What I Learned Running DevRel in 2026](https://www.joekarlsson.com/blog/running-devrel-2026/)
 <!-- BLOG-POST-LIST:END -->
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
