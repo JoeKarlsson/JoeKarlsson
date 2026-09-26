@@ -40,11 +40,11 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [I Made Adult Swim Bumpers for My Plex Server](https://www.joekarlsson.com/blog/adult-swim-bumpers-plex-pre-rolls/)
+- [I Can&#39;t Memorize Lines, So I Built a Teleprompter That Listens](https://www.joekarlsson.com/blog/followspot-local-whisper-teleprompter/)
 - [Ship the Ugly Pot](https://www.joekarlsson.com/blog/ship-the-ugly-pot/)
 - [The Cognitive Case for Play in Technical Work](https://www.joekarlsson.com/blog/cognitive-case-for-play-in-technical-work/)
 - [What I Learned When I Could Finally Prove My Work Mattered](https://www.joekarlsson.com/blog/proving-my-work-mattered/)
-- [The 2026-07-28 MCP Release Explained: What It Means for Enterprise Teams](https://www.joekarlsson.com/blog/mcp-2026-07-28-release-explained/)
-- [I Finally Stopped Managing My Homelab by Hand &lpar;Everything Just Kept Breaking&rpar;](https://www.joekarlsson.com/blog/opentofu-proxmox-immutable-homelab/)
 <!-- BLOG-POST-LIST:END -->
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
