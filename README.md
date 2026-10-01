@@ -40,11 +40,11 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [My Development Setup in 2026](https://www.joekarlsson.com/blog/my-development-setup-2026/)
 - [The Best Home Assistant Automations of 2026 &lpar;10 Years In&rpar;](https://www.joekarlsson.com/blog/best-home-assistant-automations/)
-- [I Made Adult Swim Bumpers for My Plex Server](https://www.joekarlsson.com/blog/adult-swim-bumpers-plex-pre-rolls/)
-- [I Can&#39;t Memorize Lines, So I Built a Teleprompter That Listens](https://www.joekarlsson.com/blog/followspot-local-whisper-teleprompter/)
-- [Ship the Ugly Pot](https://www.joekarlsson.com/blog/ship-the-ugly-pot/)
-- [The Cognitive Case for Play in Technical Work](https://www.joekarlsson.com/blog/cognitive-case-for-play-in-technical-work/)
+- [Enterprise Data Access for AI Agents: What Model Routing Doesn&#39;t Cover](https://www.joekarlsson.com/blog/ai-gateway-data-access-layer/)
+- [AI Gateway for Developers: What Teams Are Building on Live Enterprise Data](https://www.joekarlsson.com/blog/ai-gateway-for-developers/)
+- [How to Connect Your Business Apps to Meta Muse](https://www.joekarlsson.com/blog/connect-enterprise-data-meta-muse/)
 <!-- BLOG-POST-LIST:END -->
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
