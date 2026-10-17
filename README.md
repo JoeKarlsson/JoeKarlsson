@@ -40,11 +40,11 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Why I use DOOM to visualize MCP data](https://www.joekarlsson.com/blog/why-i-use-doom-to-visualize-mcp-data/)
+- [First impressions of Claude Code mods](https://www.joekarlsson.com/blog/claude-code-mods-first-impressions/)
 - [Why I Self-Host My Newsletter](https://www.joekarlsson.com/newsletter/why-i-self-host-my-newsletter/)
 - [Taste Matters More with AI](https://www.joekarlsson.com/newsletter/taste-matters-more-with-ai/)
 - [I hate editing video, so I built a screen recorder that edits for me](https://www.joekarlsson.com/blog/screencast-director-screen-recorder/)
-- [I built a 32x32 pixel art frame that shows what my house is doing](https://www.joekarlsson.com/blog/pixelpane-pixel-art-home-assistant/)
-- [Breaking up with Claude Code](https://www.joekarlsson.com/blog/breaking-up-with-claude-code/)
 <!-- BLOG-POST-LIST:END -->
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
