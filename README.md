@@ -41,7 +41,7 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 
 <!-- BLOG-POST-LIST:START -->
 - [Best MCP Servers for ChatGPT, Dots, and Meta Muse](https://www.joekarlsson.com/blog/best-mcp-servers-chatgpt-meta-muse/)
-- [Why I use DOOM to visualize MCP data](https://www.joekarlsson.com/blog/why-i-use-doom-to-visualize-mcp-data/)
+- [I put an MCP server inside DOOM](https://www.joekarlsson.com/blog/why-i-use-doom-to-visualize-mcp-data/)
 - [First impressions of Claude Code mods](https://www.joekarlsson.com/blog/claude-code-mods-first-impressions/)
 - [How to Use ChatGPT Dots with Salesforce, Jira, and More](https://www.joekarlsson.com/blog/how-to-use-chatgpt-dots/)
 - [Why I Self-Host My Newsletter](https://www.joekarlsson.com/newsletter/why-i-self-host-my-newsletter/)
