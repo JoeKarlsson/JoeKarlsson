@@ -40,11 +40,11 @@ Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he lead
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [A tour of my recording setup in 2027, all on one standing desk that rolls](https://www.joekarlsson.com/blog/recording-setup-tour/)
+- [Are English sentences getting shorter? About 40% of the drop is punctuation](https://www.joekarlsson.com/blog/sentence-length-semicolons-punctuation/)
+- [Rereading Hackers and Painters as a painter who codes with AI agents](https://www.joekarlsson.com/blog/hackers-and-painters-ai-agents/)
+- [A tour of my recording setup in 2026, all on one standing desk that rolls](https://www.joekarlsson.com/blog/recording-setup-tour/)
 - [Homelab gift ideas 2026: gear from my rack and desk, sorted by price](https://www.joekarlsson.com/blog/homelab-gift-ideas-2026/)
 - [I Wired Doom to Two MCP Servers and Let Claude Play It](https://www.joekarlsson.com/blog/doom-mcp-server/)
-- [Can Open Knowledge Format make Claude Code more accurate and cheaper? I tested it](https://www.joekarlsson.com/blog/claude-md-open-knowledge-format/)
-- [Best MCP Servers for ChatGPT, Dots, and Meta Muse](https://www.joekarlsson.com/blog/best-mcp-servers-chatgpt-meta-muse/)
 <!-- BLOG-POST-LIST:END -->
 
 [linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
