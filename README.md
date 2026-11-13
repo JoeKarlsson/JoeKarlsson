@@ -1,55 +1,22 @@
-<h1 align="left" id="joekarlsson-title">:wave: Hello there fellow nerds! You can call me Joe Karlsson.</h1>
-<h3 align="left">I am a Developer Marketing Engineer at CData</h3>
+<p>
+  <a href="https://www.joekarlsson.com/"><img src="assets/header.svg" alt="Joe Karlsson: I build weird things and show my work" width="49%"></a>
+  <img src="assets/stats.svg" alt="My GitHub contributions: total, streaks, contributions per year and the hours I commit" width="49%">
+</p>
 
-<a href="#joekarlsson-title">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=joekarlsson&theme=react&hide_border=true" alt="Joe Karlsson" align="right" />
-</a>
+I'm Joe (he/they), and I live in Saint Paul. I've spent about 15 years writing software and explaining it in 100+ conference talks, a TEDx talk and a lot of videos. Off the clock I make art, run a homelab and watch a lot of movies.
 
-- :office: &nbsp;Currently working at **CData** — helping AI agents talk to enterprise data
-- :writing_hand: &nbsp;I regularly write articles on my **[blog]**
-- :speech_balloon: &nbsp;I like to talk about **data, databases, and MCP**
-- :seedling: &nbsp;I make art out of seeds and grains
-- :house_with_garden: &nbsp;I run a [homelab](https://www.joekarlsson.com/blog/homelab-two-years-later/) with 40+ self-hosted services on Proxmox
-- :mailbox: &nbsp;Ask me about anything, I am happy to **help** :)
+<a href="https://www.joekarlsson.com/blog/homelab-two-years-later/"><img src="assets/homelab.svg" alt="My homelab: 74 self-hosted services on 2 Proxmox nodes" width="100%"></a>
 
-<br clear="right"/>
+Curious what's in the rack and on the desk? Here's **[everything I use](https://www.joekarlsson.com/uses/)** and **[a tour of my recording setup](https://www.joekarlsson.com/blog/recording-setup-tour/)**.
 
-## 📫 How to Reach Me
+## Latest posts
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joekarlsson/)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/c/JoeKarlsson)
-[![Bluesky](https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app/profile/joekarlsson.com)
-[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@joekarlsson)
-[![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@joekarlsson)
-[![Website](https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.joekarlsson.com/)
+<!-- POSTS:START -->
+<table><tr><td width="50%" valign="top"><a href="https://www.joekarlsson.com/blog/sentence-length-semicolons-punctuation/"><img src="assets/posts/post-1.png" alt="" width="100%"></a><br><a href="https://www.joekarlsson.com/blog/sentence-length-semicolons-punctuation/"><b>Are English sentences getting shorter? About 40% of the drop is punctuation</b></a></td><td width="50%" valign="top"><a href="https://www.joekarlsson.com/blog/hackers-and-painters-ai-agents/"><img src="assets/posts/post-2.png" alt="" width="100%"></a><br><a href="https://www.joekarlsson.com/blog/hackers-and-painters-ai-agents/"><b>Rereading Hackers and Painters as a painter who codes with AI agents</b></a></td></tr><tr><td width="50%" valign="top"><a href="https://www.joekarlsson.com/blog/recording-setup-tour/"><img src="assets/posts/post-3.png" alt="" width="100%"></a><br><a href="https://www.joekarlsson.com/blog/recording-setup-tour/"><b>A tour of my recording setup in 2026, all on one standing desk that rolls</b></a></td><td width="50%" valign="top"><a href="https://www.joekarlsson.com/blog/homelab-gift-ideas-2026/"><img src="assets/posts/post-4.png" alt="" width="100%"></a><br><a href="https://www.joekarlsson.com/blog/homelab-gift-ideas-2026/"><b>Homelab gift ideas 2026: gear from my rack and desk, sorted by price</b></a></td></tr></table>
+<!-- POSTS:END -->
 
-## 👨‍💻 About Me
+<a href="https://www.joekarlsson.com/newsletter/"><img src="assets/newsletter.svg" alt="Works on My Machine, my newsletter on tech writing, AI, homelab builds and open source. Subscribe." width="100%"></a>
 
-Joe Karlsson (he/they) is a Developer Marketing Engineer at CData, where he leads developer growth for the managed MCP platform connecting AI agents to live enterprise data. He's spent 15+ years wrangling databases and developer communities at MongoDB, SingleStore, Tinybird, and CloudQuery. Along the way he's given 100+ conference talks worldwide, delivered a TEDx talk, and somehow found time to make art out of seeds and grains (exhibited at the Minnesota State Fair — yes, really). He comes from the frozen tundra of Minneapolis, MN (it does get cold; no, not everyone sounds like Fargo).
+## Find me
 
-😄 **Pronouns:** He/Him/They/Them
-
-## 🐍 Contributions
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JoeKarlsson/JoeKarlsson/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JoeKarlsson/JoeKarlsson/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/JoeKarlsson/JoeKarlsson/output/github-contribution-grid-snake.svg" />
-</picture>
-
-## ✍️ Latest Blog Posts
-
-<!-- BLOG-POST-LIST:START -->
-- [Are English sentences getting shorter? About 40% of the drop is punctuation](https://www.joekarlsson.com/blog/sentence-length-semicolons-punctuation/)
-- [Rereading Hackers and Painters as a painter who codes with AI agents](https://www.joekarlsson.com/blog/hackers-and-painters-ai-agents/)
-- [A tour of my recording setup in 2026, all on one standing desk that rolls](https://www.joekarlsson.com/blog/recording-setup-tour/)
-- [Homelab gift ideas 2026: gear from my rack and desk, sorted by price](https://www.joekarlsson.com/blog/homelab-gift-ideas-2026/)
-- [I Wired Doom to Two MCP Servers and Let Claude Play It](https://www.joekarlsson.com/blog/doom-mcp-server/)
-<!-- BLOG-POST-LIST:END -->
-
-[linkedin]: https://www.linkedin.com/in/joekarlsson/ "LinkedIn"
-[youtube]: https://www.youtube.com/c/JoeKarlsson "YouTube"
-[bluesky]: https://bsky.app/profile/joekarlsson.com "Bluesky"
-[threads]: https://www.threads.com/@joekarlsson "Threads"
-[tiktok]: https://www.tiktok.com/@joekarlsson "TikTok"
-[blog]: https://www.joekarlsson.com/ "Blog"
+[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMzcuMiAxMjgiIHdpZHRoPSIxMzciIGhlaWdodD0iMTI4Ij4KPHRpdGxlPkpvZSBLYXJsc3NvbjwvdGl0bGU%2BCjxkZWZzPjxmaWx0ZXIgaWQ9IndvYmJsZSIgeD0iLTEwJSIgeT0iLTEwJSIgd2lkdGg9IjEyMCUiIGhlaWdodD0iMTIwJSI%2BPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDMxIiBudW1PY3RhdmVzPSIyIiBzZWVkPSIxIi8%2BPGZlRGlzcGxhY2VtZW50TWFwIGluPSJTb3VyY2VHcmFwaGljIiBzY2FsZT0iNC41Ii8%2BPC9maWx0ZXI%2BPC9kZWZzPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNCAxNCkiPgo8cGF0aCBkPSJNMjYuNTkgMTAwLjkxIFExOS44MyAxMDAuOTEgMTQuMjYgOTguMyBROC42OSA5NS42OCA1LjQzIDkwLjU0IFEyLjE2IDg1LjQgMi4xNiA3Ny45IEwyLjE2IDUyLjg0IEwyMS45MyA1Mi44NCBMMjEuOTMgNzYuNyBRMjEuOTMgNzkuMzIgMjIuOTggODAuOTEgUTI0LjAzIDgyLjUgMjYuMzYgODIuNSBRMzAuODUgODIuNSAzMC44NSA3Ni45OSBMMzAuODUgMCBMNTEuMDIgMCBMNTEuMDIgNzUgUTUxLjAyIDgyLjk1IDQ3LjkgODguNzggUTQ0Ljc3IDk0LjYgMzkuMjYgOTcuNzYgUTMzLjc1IDEwMC45MSAyNi41OSAxMDAuOTEgWiBNNTguNjkgMTAwIEw1OC42OSAwIEw3OC40NyAwIEw3OC40NyA0MC4wNiBMODcuNzggMCBMMTA3LjkgMCBMOTYuNyA0NS44IEwxMTAuMjMgMTAwIEw4OS40OSAxMDAgTDc4LjU4IDUxLjU5IEw3OC41OCAxMDAgWiIgZmlsbD0iI2ZmNGZkOCIvPgo8cGF0aCBkPSJNMjYuNTkgMTAwLjkxIFExOS44MyAxMDAuOTEgMTQuMjYgOTguMyBROC42OSA5NS42OCA1LjQzIDkwLjU0IFEyLjE2IDg1LjQgMi4xNiA3Ny45IEwyLjE2IDUyLjg0IEwyMS45MyA1Mi44NCBMMjEuOTMgNzYuNyBRMjEuOTMgNzkuMzIgMjIuOTggODAuOTEgUTI0LjAzIDgyLjUgMjYuMzYgODIuNSBRMzAuODUgODIuNSAzMC44NSA3Ni45OSBMMzAuODUgMCBMNTEuMDIgMCBMNTEuMDIgNzUgUTUxLjAyIDgyLjk1IDQ3LjkgODguNzggUTQ0Ljc3IDk0LjYgMzkuMjYgOTcuNzYgUTMzLjc1IDEwMC45MSAyNi41OSAxMDAuOTEgWiBNNTguNjkgMTAwIEw1OC42OSAwIEw3OC40NyAwIEw3OC40NyA0MC4wNiBMODcuNzggMCBMMTA3LjkgMCBMOTYuNyA0NS44IEwxMTAuMjMgMTAwIEw4OS40OSAxMDAgTDc4LjU4IDUxLjU5IEw3OC41OCAxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUuNiAtNC41KSIgZmlsdGVyPSJ1cmwoI3dvYmJsZSkiLz4KPC9nPgo8L3N2Zz4K&logoColor=ff4fd8)](https://www.joekarlsson.com/) [![Newsletter](https://img.shields.io/badge/Newsletter-000000?style=for-the-badge&logo=minutemailer&logoColor=ff4fd8)](https://newsletter.joekarlsson.com/) [![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=ff4fd8)](https://www.threads.com/@joekarlsson) [![LinkedIn](https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmNGZkOCIgZD0iTTIwLjQ1IDIwLjQ1aC0zLjU2di01LjU3YzAtMS4zMy0uMDItMy4wNC0xLjg1LTMuMDQtMS44NSAwLTIuMTQgMS40NS0yLjE0IDIuOTR2NS42N0g5LjM1VjloMy40MXYxLjU2aC4wNWMuNDgtLjkgMS42NC0xLjg1IDMuMzctMS44NSAzLjYgMCA0LjI3IDIuMzcgNC4yNyA1LjQ2djYuMjh6TTUuMzQgNy40M2EyLjA2IDIuMDYgMCAxIDEgMC00LjEzIDIuMDYgMi4wNiAwIDAgMSAwIDQuMTN6TTcuMTIgMjAuNDVIMy41NlY5aDMuNTZ2MTEuNDV6TTIyLjIyIDBIMS43N0MuNzkgMCAwIC43NyAwIDEuNzN2MjAuNTRDMCAyMy4yMy43OSAyNCAxLjc3IDI0aDIwLjQ1Yy45OCAwIDEuNzgtLjc3IDEuNzgtMS43M1YxLjczQzI0IC43NyAyMy4yIDAgMjIuMjIgMHoiLz48L3N2Zz4%3D&logoColor=ff4fd8)](https://www.linkedin.com/in/joekarlsson/) [![YouTube](https://img.shields.io/badge/YouTube-000000?style=for-the-badge&logo=youtube&logoColor=ff4fd8)](https://www.youtube.com/@joekarlsson) [![Bluesky](https://img.shields.io/badge/Bluesky-000000?style=for-the-badge&logo=bluesky&logoColor=ff4fd8)](https://bsky.app/profile/joekarlsson.com) [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=ff4fd8)](https://x.com/JoeKarlsson1) [![Instagram](https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=ff4fd8)](https://www.instagram.com/joekarlsson/) [![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=ff4fd8)](https://www.tiktok.com/@joekarlsson) [![All my links](https://img.shields.io/badge/All_my_links-ff4fd8?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmY0ZmQ4IiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNMTAgMTNhNSA1IDAgMCAwIDcuNS41bDMtM2E1IDUgMCAwIDAtNy03bC0xLjcgMS43Ii8%2BPHBhdGggZD0iTTE0IDExYTUgNSAwIDAgMC03LjUtLjVsLTMgM2E1IDUgMCAwIDAgNyA3bDEuNy0xLjciLz48L3N2Zz4%3D&labelColor=000000)](https://hello.joekarlsson.io/)
