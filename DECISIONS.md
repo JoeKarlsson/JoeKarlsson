@@ -18,3 +18,4 @@ Joe's standing verdicts for this profile README, dated. Read before any change; 
 - 2026-11-12: Header scribbles match joekarlsson.com exactly: same paths, one-pen stroke timing, boil filter, crayon line. Don't approximate them.
 - 2026-11-12: Newsletter gets its own section (a card linking to the signup page), not a line of text.
 - 2026-11-12: The homelab card is a static snapshot: no nightly data job. Its arrow stays (Joe likes it) and must span the gap from the 74 to the node racks.
+- 2026-11-12: Every newsletter link goes to the signup page, https://www.joekarlsson.com/newsletter/, not newsletter.joekarlsson.com.
