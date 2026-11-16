@@ -322,26 +322,48 @@ def escape(text):
 POSTS_START, POSTS_END = "<!-- POSTS:START -->", "<!-- POSTS:END -->"
 
 
+def newest_post_marks():
+    """The chalk box and pink NEW the old homepage drew round its newest post (MARKS.box and
+    MARKS.newTag, same sizes and placement). The blog index doesn't draw them, so the capture adds them."""
+    marks = []
+    for mark, color, stroke_width, place in (
+        (SCRIBBLES["box"], CHALK, 8, "left:-8%;top:-8%;width:116%;height:116%"),
+        (SCRIBBLES["newTag"], PINK, 16, "right:-18%;bottom:-20%;width:48%;height:40%;transform:rotate(-8deg)"),
+    ):
+        paths = "".join(f'<path d="{d}"/>' for d in split_strokes(mark["path"]))
+        fit = "none" if mark.get("stretch") else "xMidYMid meet"
+        marks.append(
+            f'<svg style="position:absolute;z-index:10;overflow:visible;pointer-events:none;{place}" '
+            f'viewBox="{mark["viewBox"]}" preserveAspectRatio="{fit}" aria-hidden="true">'
+            f'<g fill="none" stroke="{color}" stroke-width="{stroke_width}" stroke-linecap="round" '
+            f'stroke-linejoin="round" filter="url(#crayon)">{paths}</g></svg>'
+        )
+    return "".join(marks)
+
+
 def capture_latest_posts(count=4):
-    """Screenshots the newest posts' thumbnails from joekarlsson.com's homepage, so they look
-    exactly like the site (pink grading, tape, scribbles drawn in), and returns their titles and links."""
+    """Screenshots the newest posts' thumbnails from joekarlsson.com's blog index, so they look
+    exactly like the site (pink grading, tape, scribbles drawn in), and returns their titles and links.
+    The blog index, not the homepage: since the 2026-11-15 redesign the homepage shows one featured
+    picture and text rows, so it no longer has four thumbnails to capture."""
     from playwright.sync_api import sync_playwright
 
     posts = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
-        page = browser.new_page(viewport={"width": 1300, "height": 1000}, reduced_motion="reduce")
-        page.goto(f"{SITE}/", wait_until="networkidle")
-        page.add_style_tag(content="section > ul > li { border-color: transparent !important; }")  # row dividers
-        heading = page.locator("h2").filter(has_text=re.compile(r"^\s*Recent posts\s*$"))  # stays found once hidden
-        rows = heading.locator("xpath=..").locator(":scope > ul > li")
+        # bypass_csp: the site requires Trusted Types, which would refuse the NEW marks added below
+        page = browser.new_page(viewport={"width": 1300, "height": 1000}, reduced_motion="reduce", bypass_csp=True)
+        page.goto(f"{SITE}/blog/", wait_until="networkidle")
+        page.add_style_tag(content="main li { border-color: transparent !important; }")  # row dividers
+        rows = page.locator("main li:has(> a[aria-hidden='true'] img)")  # sorted newest first
         if rows.count() < count:
-            raise RuntimeError(f"Found {rows.count()} recent posts on the homepage, expected {count}: its layout changed")
+            raise RuntimeError(f"Found {rows.count()} post rows on the blog index, expected {count}: its layout changed")
         for i in range(count):
             row = rows.nth(i)
             # Marks hang over into neighboring rows (the newest post's NEW tag): show only this row
             rows.evaluate_all("(rows, keep) => rows.forEach((r, j) => r.style.visibility = j === keep ? 'visible' : 'hidden')", i)
-            heading.evaluate("h => h.style.visibility = 'hidden'")
+            if i == 0:
+                row.locator("a[aria-hidden='true']").first.evaluate("(a, marks) => a.insertAdjacentHTML('beforeend', marks)", newest_post_marks())
             row.scroll_into_view_if_needed()
             page.wait_for_timeout(1500)  # lazy images load and the halftone draws
             thumbnail = row.locator("a[aria-hidden='true']").first
