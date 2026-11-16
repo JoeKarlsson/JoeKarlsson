@@ -1,6 +1,6 @@
 import unittest
 
-from readme_cards import commit_hours, latest_issue, replace_between, streaks
+from readme_cards import commit_hours, latest_issue, newest_post_marks, replace_between, streaks
 
 
 class StreaksTest(unittest.TestCase):
@@ -38,6 +38,14 @@ class LatestIssueTest(unittest.TestCase):
     def test_a_changed_layout_fails_loudly(self):
         with self.assertRaises(ValueError):
             latest_issue("no issues here")
+
+
+class NewestPostMarksTest(unittest.TestCase):
+    def test_box_stretches_round_the_picture_and_new_keeps_its_shape(self):
+        box, new = newest_post_marks().split("</svg>")[:2]
+        self.assertIn('viewBox="0 0 600 300" preserveAspectRatio="none"', box)
+        self.assertIn('viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet"', new)
+        self.assertIn('stroke="#ff4fd8"', new)
 
 
 class ReplaceBetweenTest(unittest.TestCase):
