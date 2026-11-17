@@ -269,8 +269,8 @@ def fetch_text(url, accept="text/html"):
 
 def latest_issue(newsletter_markdown):
     """The newest Works on My Machine issue from the newsletter page's Markdown version:
-    `- [![](card image)](issue url)Nov 12, 2026 [Title](issue url)`."""
-    match = re.search(r"^- \[!\[[^\]]*\]\((?P<image>[^)]+)\)\]\((?P<url>[^)]+)\)(?P<date>[A-Z][a-z]{2} \d{1,2}, \d{4}) \[(?P<title>[^\]]+)\]",
+    `- [![](card image)](issue url)Nov 12, 2026 6 min read [Title](issue url)` (reading time optional)."""
+    match = re.search(r"^- \[!\[[^\]]*\]\((?P<image>[^)]+)\)\]\((?P<url>[^)]+)\)(?P<date>[A-Z][a-z]{2} \d{1,2}, \d{4}) (?:\d+ min read )?\[(?P<title>[^\]]+)\]",
                       newsletter_markdown, re.M)
     if not match:
         raise ValueError("No issue found on the newsletter page: its Markdown layout changed")

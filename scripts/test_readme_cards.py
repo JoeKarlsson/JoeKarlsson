@@ -35,6 +35,11 @@ class LatestIssueTest(unittest.TestCase):
             {"image": "https://x.test/card.webp", "url": "https://x.test/issue-2/", "date": "Nov 12, 2026", "title": "What to Buy a Homelabber in 2026"},
         )
 
+    def test_skips_the_reading_time_between_date_and_title(self):
+        page = "- [![](https://x.test/card.webp)](https://x.test/issue-3/)Nov 17, 2026 6 min read [Eight panes](https://x.test/issue-3/)\n"
+        self.assertEqual(latest_issue(page)["date"], "Nov 17, 2026")
+        self.assertEqual(latest_issue(page)["title"], "Eight panes")
+
     def test_a_changed_layout_fails_loudly(self):
         with self.assertRaises(ValueError):
             latest_issue("no issues here")
