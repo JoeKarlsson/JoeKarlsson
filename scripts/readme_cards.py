@@ -16,6 +16,8 @@ import os
 import random
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -151,12 +153,36 @@ def github_graphql(query, variables=None):
     return body["data"]
 
 
-def github_rest(path):
+def rate_limit_wait(status, headers, body, now):
+    """Seconds GitHub asks us to wait before retrying, or None when the error isn't a rate limit.
+    Follows GitHub's rules: retry-after first, then the primary limit's reset time, then a minute
+    for a secondary limit that names itself without a retry-after."""
+    if status not in (403, 429):
+        return None
+    if headers.get("retry-after"):
+        return int(headers["retry-after"])
+    if headers.get("x-ratelimit-remaining") == "0" and headers.get("x-ratelimit-reset"):
+        return max(int(headers["x-ratelimit-reset"]) - int(now), 1)
+    if "rate limit" in body.lower():
+        return 60
+    return None
+
+
+def github_rest(path, attempts=3):
     request = urllib.request.Request(
         f"https://api.github.com/{path}",
         headers={"Authorization": f"bearer {os.environ['GH_TOKEN']}", "Accept": "application/vnd.github+json"},
     )
-    return json.load(urllib.request.urlopen(request, timeout=60))
+    for attempt in range(1, attempts + 1):
+        try:
+            return json.load(urllib.request.urlopen(request, timeout=60))
+        except urllib.error.HTTPError as error:
+            body = error.read().decode(errors="replace")
+            wait = rate_limit_wait(error.code, error.headers, body, time.time())
+            if wait is None or attempt == attempts or wait > 600:
+                raise RuntimeError(f"GitHub {error.code} on {path}: {body}") from error
+            print(f"GitHub rate limit on {path}, waiting {wait}s (attempt {attempt}/{attempts}): {body}", file=sys.stderr)
+            time.sleep(wait)
 
 
 def streaks(days, today):

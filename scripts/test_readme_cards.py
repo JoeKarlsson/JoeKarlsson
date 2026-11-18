@@ -1,6 +1,6 @@
 import unittest
 
-from readme_cards import commit_hours, latest_issue, newest_post_marks, replace_between, streaks
+from readme_cards import commit_hours, latest_issue, newest_post_marks, rate_limit_wait, replace_between, streaks
 
 
 class StreaksTest(unittest.TestCase):
@@ -62,6 +62,21 @@ class ReplaceBetweenTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_between("no markers", "<!-- A -->", "<!-- B -->", "new")
 
+
+
+class RateLimitWaitTest(unittest.TestCase):
+    def test_waits_as_long_as_retry_after_says(self):
+        self.assertEqual(rate_limit_wait(403, {"retry-after": "30"}, "", 0), 30)
+
+    def test_waits_until_the_primary_limit_resets(self):
+        headers = {"x-ratelimit-remaining": "0", "x-ratelimit-reset": "1100"}
+        self.assertEqual(rate_limit_wait(403, headers, "", 1000), 100)
+
+    def test_secondary_limit_without_retry_after_waits_a_minute(self):
+        self.assertEqual(rate_limit_wait(403, {}, '{"message": "You have exceeded a secondary rate limit"}', 0), 60)
+
+    def test_a_403_that_is_not_a_rate_limit_fails(self):
+        self.assertIsNone(rate_limit_wait(403, {"x-ratelimit-remaining": "25"}, '{"message": "Resource not accessible"}', 0))
 
 if __name__ == "__main__":
     unittest.main()
