@@ -1,6 +1,7 @@
+import base64
 import unittest
 
-from readme_cards import commit_hours, latest_issue, newest_post_marks, rate_limit_wait, replace_between, streaks
+from readme_cards import commit_hours, latest_issue, newest_post_marks, pink_graded, rate_limit_wait, replace_between, streaks
 
 
 class StreaksTest(unittest.TestCase):
@@ -77,6 +78,30 @@ class RateLimitWaitTest(unittest.TestCase):
 
     def test_a_403_that_is_not_a_rate_limit_fails(self):
         self.assertIsNone(rate_limit_wait(403, {"x-ratelimit-remaining": "25"}, '{"message": "Resource not accessible"}', 0))
+
+class PinkGradeTest(unittest.TestCase):
+    def test_a_grey_photo_comes_out_black_to_pink(self):
+        """A dark grey photo (the circus issue's card) ends up the site's pink, not grey."""
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch()
+            page = browser.new_page()
+            # Left half near black, right half mid grey: a dark picture, so no invert
+            grey = page.evaluate("""() => { const c = document.createElement('canvas'); c.width = 20; c.height = 10;
+                const x = c.getContext('2d'); x.fillStyle = '#101010'; x.fillRect(0, 0, 10, 10);
+                x.fillStyle = '#707070'; x.fillRect(10, 0, 10, 10); return c.toDataURL('image/png'); }""")
+            graded = pink_graded(page, grey, 20)
+            pixels = page.evaluate("""async (bytes) => { const img = new Image(); img.src = 'data:image/jpeg;base64,' + bytes; await img.decode();
+                const c = document.createElement('canvas'); c.width = 20; c.height = 10; const x = c.getContext('2d'); x.drawImage(img, 0, 0);
+                return [Array.from(x.getImageData(2, 5, 1, 1).data.slice(0, 3)), Array.from(x.getImageData(17, 5, 1, 1).data.slice(0, 3))]; }""",
+                                   base64.b64encode(graded).decode())
+            browser.close()
+        dark, light = pixels
+        self.assertTrue(all(v < 20 for v in dark), dark)
+        for got, want in zip(light, (0xff, 0x4f, 0xd8)):
+            self.assertAlmostEqual(got, want, delta=12)
+
 
 if __name__ == "__main__":
     unittest.main()

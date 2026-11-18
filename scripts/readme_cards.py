@@ -367,41 +367,83 @@ def newest_post_marks():
     return "".join(marks)
 
 
-def capture_latest_posts(count=4):
+# The site's live pink pass (joekarlsson.com src/scripts/halftone.ts), ported to a 2D canvas.
+# The site draws it with WebGL and shows the grey or color original when it only gets a software
+# GPU, which is all headless Chromium has, so any picture the site doesn't ship pre-graded (a
+# newsletter issue's card photo) came out ungraded. Same math: auto-level the brightness (ignoring
+# the darkest and brightest 2%), invert a mostly light image, then black to pink.
+PINK_GRADE_JS = """async ([source, maxWidth]) => {
+    const image = new Image();
+    image.src = source;
+    await image.decode();
+    const measureSize = 32, sample = document.createElement('canvas');
+    sample.width = sample.height = measureSize;
+    const sampleContext = sample.getContext('2d', { willReadFrequently: true });
+    sampleContext.drawImage(image, 0, 0, measureSize, measureSize);
+    const luma = (d, i) => (0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]) / 255;
+    const sampled = sampleContext.getImageData(0, 0, measureSize, measureSize).data;
+    const values = [];
+    for (let i = 0; i < sampled.length; i += 4) values.push(luma(sampled, i));
+    values.sort((a, b) => a - b);
+    const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
+    let low = values[Math.floor(values.length * 0.02)], high = values[Math.ceil(values.length * 0.98) - 1];
+    if (high - low < 0.1) [low, high] = [0, 1];
+    const invert = mean > 140 / 255;
+    const scale = Math.min(1, maxWidth / image.naturalWidth);
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(image.naturalWidth * scale);
+    canvas.height = Math.round(image.naturalHeight * scale);
+    const context = canvas.getContext('2d');
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
+    const d = pixels.data;
+    for (let i = 0; i < d.length; i += 4) {
+        let v = Math.min(1, Math.max(0, (luma(d, i) - low) / (high - low)));
+        if (invert) v = 1 - v;
+        d[i] = 255 * v; d[i + 1] = 0x4f * v; d[i + 2] = 0xd8 * v;
+    }
+    context.putImageData(pixels, 0, 0);
+    return canvas.toDataURL('image/jpeg', 0.9);
+}"""
+
+
+def pink_graded(page, image_url, max_width):
+    """JPEG bytes of the picture at image_url graded pink like the site. The page must be on the site (same origin)."""
+    data_url = page.evaluate(PINK_GRADE_JS, [image_url, max_width])
+    return base64.b64decode(data_url.split(",", 1)[1])
+
+
+def capture_latest_posts(page, count=4):
     """Screenshots the newest posts' thumbnails from joekarlsson.com's blog index, so they look
     exactly like the site (pink grading, tape, scribbles drawn in), and returns their titles and links.
     The blog index, not the homepage: since the 2026-11-15 redesign the homepage shows one featured
     picture and text rows, so it no longer has four thumbnails to capture."""
-    from playwright.sync_api import sync_playwright
-
     posts = []
-    with sync_playwright() as playwright:
-        browser = playwright.chromium.launch()
-        # bypass_csp: the site requires Trusted Types, which would refuse the NEW marks added below
-        page = browser.new_page(viewport={"width": 1300, "height": 1000}, reduced_motion="reduce", bypass_csp=True)
-        page.goto(f"{SITE}/blog/", wait_until="networkidle")
-        page.add_style_tag(content="main li { border-color: transparent !important; }")  # row dividers
-        rows = page.locator("main li:has(> a[aria-hidden='true'] img)")  # sorted newest first
-        if rows.count() < count:
-            raise RuntimeError(f"Found {rows.count()} post rows on the blog index, expected {count}: its layout changed")
-        for i in range(count):
-            row = rows.nth(i)
-            # Marks hang over into neighboring rows (the newest post's NEW tag): show only this row
-            rows.evaluate_all("(rows, keep) => rows.forEach((r, j) => r.style.visibility = j === keep ? 'visible' : 'hidden')", i)
-            if i == 0:
-                row.locator("a[aria-hidden='true']").first.evaluate("(a, marks) => a.insertAdjacentHTML('beforeend', marks)", newest_post_marks())
-            row.scroll_into_view_if_needed()
-            page.wait_for_timeout(1500)  # lazy images load and the halftone draws
-            thumbnail = row.locator("a[aria-hidden='true']").first
-            box, row_box = thumbnail.bounding_box(), row.bounding_box()
-            pad = 26  # tape and scribbles reach past the picture, but stay inside the row so neighbors' marks don't show
-            top = max(box["y"] - pad, row_box["y"])
-            bottom = min(box["y"] + box["height"] + pad, row_box["y"] + row_box["height"])
-            page.screenshot(path=str(ASSETS / "posts" / f"post-{i + 1}.png"),
-                            clip={"x": box["x"] - pad, "y": top, "width": box["width"] + 2 * pad, "height": bottom - top})
-            link = row.locator("div > a").first
-            posts.append({"title": link.inner_text().strip(), "url": SITE + link.get_attribute("href")})
-        browser.close()
+    page.goto(f"{SITE}/blog/", wait_until="networkidle")
+    page.add_style_tag(content="main li { border-color: transparent !important; }")  # row dividers
+    rows = page.locator("main li:has(> a[aria-hidden='true'] img)")  # sorted newest first
+    if rows.count() < count:
+        raise RuntimeError(f"Found {rows.count()} post rows on the blog index, expected {count}: its layout changed")
+    for i in range(count):
+        row = rows.nth(i)
+        # Marks hang over into neighboring rows (the newest post's NEW tag): show only this row
+        rows.evaluate_all("(rows, keep) => rows.forEach((r, j) => r.style.visibility = j === keep ? 'visible' : 'hidden')", i)
+        if i == 0:
+            row.locator("a[aria-hidden='true']").first.evaluate("(a, marks) => a.insertAdjacentHTML('beforeend', marks)", newest_post_marks())
+        row.scroll_into_view_if_needed()
+        page.wait_for_timeout(1500)  # lazy images load
+        # Pictures the site grades live (data-halftone) show ungraded here: grade them the same way
+        for image in row.locator("img[data-halftone]").all():
+            image.evaluate(f"async (img) => {{ img.srcset = ''; img.src = await ({PINK_GRADE_JS})([img.currentSrc || img.src, 1200]); await img.decode(); }}")
+        thumbnail = row.locator("a[aria-hidden='true']").first
+        box, row_box = thumbnail.bounding_box(), row.bounding_box()
+        pad = 26  # tape and scribbles reach past the picture, but stay inside the row so neighbors' marks don't show
+        top = max(box["y"] - pad, row_box["y"])
+        bottom = min(box["y"] + box["height"] + pad, row_box["y"] + row_box["height"])
+        page.screenshot(path=str(ASSETS / "posts" / f"post-{i + 1}.png"),
+                        clip={"x": box["x"] - pad, "y": top, "width": box["width"] + 2 * pad, "height": bottom - top})
+        link = row.locator("div > a").first
+        posts.append({"title": link.inner_text().strip(), "url": SITE + link.get_attribute("href")})
     return posts
 
 
@@ -433,10 +475,18 @@ def main(command):
     elif command == "nightly":
         (ASSETS / "stats.svg").write_text(stats_svg(fetch_stats()))
         issue = latest_issue(fetch_text(f"{SITE}/newsletter/", accept="text/markdown"))
-        image = urllib.request.urlopen(urllib.request.Request(issue["image"], headers={"User-Agent": "readme-cards"}), timeout=60).read()
-        (ASSETS / "newsletter.svg").write_text(newsletter_svg(issue, image))
         (ASSETS / "posts").mkdir(exist_ok=True)
-        README.write_text(replace_between(README.read_text(), POSTS_START, POSTS_END, posts_table(capture_latest_posts())))
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch()
+            # bypass_csp: the site requires Trusted Types, which would refuse the NEW marks added to the newest post
+            page = browser.new_page(viewport={"width": 1300, "height": 1000}, reduced_motion="reduce", bypass_csp=True)
+            posts = capture_latest_posts(page)
+            image = pink_graded(page, issue["image"], 460)  # the card shows it 230 wide, so 2x
+            browser.close()
+        (ASSETS / "newsletter.svg").write_text(newsletter_svg(issue, image))
+        README.write_text(replace_between(README.read_text(), POSTS_START, POSTS_END, posts_table(posts)))
     else:
         raise SystemExit(f"Unknown command {command!r}: use static or nightly")
 
