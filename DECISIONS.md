@@ -20,3 +20,4 @@ Joe's standing verdicts for this profile README, dated. Read before any change; 
 - 2026-11-12: The homelab card is a static snapshot: no nightly data job. Its arrow stays (Joe likes it) and must span the gap from the 74 to the node racks.
 - 2026-11-12: Every newsletter link goes to the signup page, https://www.joekarlsson.com/newsletter/, not newsletter.joekarlsson.com.
 - 2026-11-16: Keep the chalk box and pink NEW on the newest post, the old homepage's marks. The posts are now captured from /blog/ (the redesigned homepage has no four thumbnails), and the script draws those marks there before the screenshot.
+- 2026-11-27: The header says hello in Joe's own oil pastel font (Joe Pastel, built in ~/Documents/dev/joe/pastel-font): a pink handwritten "hi, i'm" right of JOE with a crayon arrow back to it, so it reads "hi, i'm JOE KARLSSON". Joe picked A over B (the tagline in his hand instead of Anton).

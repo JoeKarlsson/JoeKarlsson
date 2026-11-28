@@ -31,6 +31,8 @@ PINK, INK, PAPER, GREY = "#ff4fd8", "#111111", "#ededed", "#8a8a8a"
 SCRIBBLES = json.loads((ROOT / "scripts" / "scribbles.json").read_text())
 CHALK = SCRIBBLES["CHALK"]
 FONT = base64.b64encode((ASSETS / "fonts" / "Anton-subset.ttf").read_bytes()).decode()
+# Joe's oil pastel hand (~/Documents/dev/joe/pastel-font), cut down to the header's "hi, i'm"
+HELLO_FONT = base64.b64encode((ASSETS / "fonts" / "JoePastel-hello.woff2").read_bytes()).decode()
 
 STYLE = f"""<style>@font-face{{font-family:Anton;src:url(data:font/ttf;base64,{FONT})}}text{{font-family:Anton}}
 .redraw path{{stroke-dasharray:1;stroke-dashoffset:1;animation:redraw var(--dur,7s) var(--del,0s) cubic-bezier(0.45,0.55,0.3,1) infinite}}
@@ -97,11 +99,16 @@ def header_svg():
     tally, hatch = SCRIBBLES["tally"], SCRIBBLES["hatch"]
     return (
         svg_open(width, height, "Joe Karlsson: I build weird things and show my work")
+        + f"<style>@font-face{{font-family:JoePastel;src:url(data:font/woff2;base64,{HELLO_FONT})}}</style>"
         + f'<text x="34" y="150" fill="{PAPER}" font-size="150">JOE</text>'
         + f'<text x="34" y="296" fill="{PAPER}" font-size="150" textLength="556" lengthAdjust="spacingAndGlyphs">KARLSSON</text>'
         + scribble(SCRIBBLES["HERO_COIL"], 12, 150, 590, 196, PINK, "9s", "0.3s")
         + scribble(tally["path"], width - 0.18 * width - 14, 14, 0.18 * width, 0.09 * height, CHALK, "9s", "0.6s", tally["viewBox"])
         + scribble(hatch["path"], width - 0.22 * width - 8, height - 0.16 * height - 8, 0.22 * width, 0.16 * height, PINK, "8s", "3.2s", hatch["viewBox"])
+        # "hi, i'm" in Joe's hand right of JOE, with an arrow back to it (DECISIONS.md 2026-11-27)
+        + f'<text x="306" y="118" fill="{PINK}" font-size="84" transform="rotate(-6 306 118)" style="font-family:JoePastel">hi, i\'m</text>'
+        # The site's arrow turns into a loop at this size, so a plain two-stroke one, drawn like the rest
+        + scribble("M300 132 Q272 134 256 104 M256 104 L255 124 M256 104 L273 114", 0, 0, width, height, PINK, "9s", "1.4s", f"0 0 {width} {height}", 6)
         + f'<text x="36" y="398" fill="{PAPER}" font-size="46">I BUILD WEIRD THINGS</text>'
         + f'<text x="36" y="456" fill="{PINK}" font-size="46">AND SHOW MY WORK</text></svg>'
     )
